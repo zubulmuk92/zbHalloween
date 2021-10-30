@@ -16,6 +16,7 @@ Ce script est totalement unique et merci de mentionner mon nom si vous le modifi
 ## Comment l'installer :
 
 -  Il suffit de `ensure zbHalloween`
+-  Et de bien configurer le script dans `zbConfig.lua`
 
 Les props sont fournies avec le script mais n'ont pas été modélisé par moi, je ne connais pas l'auteur je ne peux donc pas le mentionner.
 
