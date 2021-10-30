@@ -21,4 +21,4 @@ Les props sont fournies avec le script mais n'ont pas été modélisé par moi, 
 
 Merci de ne pas modifier le nom de la ressource.
 
-##/!\       NE MODIFIER PAS LA RESSOURCE SI VOUS NE SAVEZ PAS CE QUE VOUS FAITES       /!\
+## /!\       NE MODIFIER PAS LA RESSOURCE SI VOUS NE SAVEZ PAS CE QUE VOUS FAITES       /!\
