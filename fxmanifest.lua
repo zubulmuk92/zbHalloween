@@ -4,6 +4,12 @@ game 'gta5'
 
 author "zubulmuk92"
 
+
+
+-- SCRIPT
+
+
+
 shared_script {
     "zbConfig.lua"
 }
@@ -20,3 +26,32 @@ client_script {
 
 dependency 'es_extended'
 
+
+
+-- PROPS
+
+
+
+this_is_a_map 'yes'
+
+files {
+
+    "stream/*.ymap",
+
+    "stream/*.ytd",
+
+    "stream/*.ydr",
+
+    "stream/*.ybn",
+
+    "stream/*.ytyp", 
+
+    "stream/*.ymf",
+
+    "stream/*.yft",
+
+}
+
+data_file "DLC_ITYP_REQUEST" "pumpkinreal_ytyp.ytyp"
+
+data_file "DLC_ITYP_REQUEST" "jackolantern_ytyp.ytyp"

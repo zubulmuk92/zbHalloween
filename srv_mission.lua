@@ -36,19 +36,27 @@ end
 
 RegisterNetEvent("palsearp:serverSyncHalloween")
 AddEventHandler("palsearp:serverSyncHalloween", function()
-    local _source = source
-    local xPlayer = ESX.GetPlayerFromId(_source)
-
     local choixDeLaTab = math.random(1,2)
 
     local xPlayers = ESX.GetPlayers()
 
     for i=1, #xPlayers, 1 do
 		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-		TriggerClientEvent('esx:showAdvancedNotification', xPlayers[i], 'Palsea V3', '~o~HALLOWEEN', "Prenez garde~w~ !\nDes ~o~citrouilles~w~ sont apparues , allez les ~g~récupérer~w~ pour recevoir un ~o~cadeau~w~.", 'CHAR_ACTING_UP', 8)
+		TriggerClientEvent('zubul:commencerEvent', xPlayers[i],zbConfig.tabCoords[choixDeLaTab].x,zbConfig.tabCoords[choixDeLaTab].y,zbConfig.tabCoords[choixDeLaTab].z,200.0)
+        TriggerClientEvent('esx:showAdvancedNotification', xPlayers[i], 'Palsea V3', '~o~HALLOWEEN', "Prenez garde~w~ !\nDes ~o~citrouilles~w~ sont apparues , allez les ~g~récupérer~w~ pour recevoir un ~o~cadeau~w~.", 'CHAR_ABIGAIL', 8)
 	end
 
-    TriggerClientEvent('zubul:commencerEvent', _source,zbConfig.tabCoords[choixDeLaTab].x,zbConfig.tabCoords[choixDeLaTab].y,zbConfig.tabCoords[choixDeLaTab].z,200.0)
+end)
+
+RegisterNetEvent("palsearp:serverSyncHalloweenFin")
+AddEventHandler("palsearp:serverSyncHalloweenFin", function()
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
+
+    for i=1, #xPlayers, 1 do
+		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+		TriggerClientEvent('esx:showAdvancedNotification', xPlayers[i], 'Palsea V3', '~o~HALLOWEEN', "Fin de l'évènement. Les citrouilles sont toujours présentes sur le lieu !", 'CHAR_ABIGAIL', 8)
+	end
 
 end)
 
@@ -60,7 +68,7 @@ AddEventHandler("palsearp:gainHalloweenArgent", function()
     local argent = math.random(zbConfig.argentParCitrouilleMin,zbConfig.argentParCitrouilleMax)
     xPlayer.addAccountMoney('money', argent)
 
-    TriggerClientEvent('esx:showAdvancedNotification', _source, 'Palsea V3', '~o~HALLOWEEN', "Tu as ~g~ramassé~w~ une ~o~citrouille~w~.\nTu as gagné : ~g~"..argent.."~w~$.", 'CHAR_ACTING_UP', 8)
+    TriggerClientEvent('esx:showAdvancedNotification', _source, 'Palsea V3', '~o~HALLOWEEN', "Tu as ~g~ramassé~w~ une ~o~citrouille~w~.\nTu as gagné : ~g~"..argent.."~w~$.", 'CHAR_ABIGAIL', 8)
 
 end)
 
@@ -71,7 +79,7 @@ AddEventHandler("palsearp:gainHalloweenPb", function()
 
     local pb = math.random(zbConfig.pbParJackoMin,zbConfig.pbParJackoMax)
     givePb(pb)
-    TriggerClientEvent('esx:showAdvancedNotification', _source, 'Palsea V3', '~o~HALLOWEEN', "Tu as ~g~ramassé~w~ un ~r~cercueil~w~.\nTu as gagné : ~g~"..pb.."~w~ ~g~Palsea~w~Coin.", 'CHAR_ACTING_UP', 8)
+    TriggerClientEvent('esx:showAdvancedNotification', _source, 'Palsea V3', '~o~HALLOWEEN', "Tu as ~g~ramassé~w~ un ~r~cercueil~w~.\nTu as gagné : ~g~"..pb.."~w~ ~g~Palsea~w~Coin.", 'CHAR_ABIGAIL', 8)
 
 end)
 
@@ -81,10 +89,12 @@ Citizen.CreateThread(function()
 
         Citizen.Wait(5)
 
-        TriggerClientEvent("zubul:zync",ESX.GetPlayers)
+        TriggerEvent("palsearp:serverSyncHalloween")
 
-        Citizen.Wait(5000)
+        Citizen.Wait(zbConfig.eventReplay)
 
     end
 
 end)
+
+--=========    Script réalisé par zubulmuk92     =========--
