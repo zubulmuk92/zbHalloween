@@ -2,6 +2,10 @@
 
 Ce script est totalement unique et merci de mentionner mon nom si vous le modifiez et/ou le réutiliser.
 
+# Prévisualisation :
+
+https://www.youtube.com/watch?v=qbrJyLR67Zs
+
 ## Script event halloween pour FiveM. 
 
 ![image](https://user-images.githubusercontent.com/73728454/139514688-7ec6b6e4-5d3e-43d5-9542-13c4d1667f02.png)
