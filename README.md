@@ -1,6 +1,6 @@
 # zbHalloween
 
-Ce script est totalement unique et merci de mentionner mon nom si vous le modifiez et/ou de le réutiliser.
+Ce script est totalement unique et merci de mentionner mon nom si vous le modifiez et/ou le réutiliser.
 
 ## Script event halloween pour FiveM. 
 
