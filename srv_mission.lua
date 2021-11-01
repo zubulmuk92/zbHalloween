@@ -50,8 +50,7 @@ end)
 
 RegisterNetEvent("palsearp:serverSyncHalloweenFin")
 AddEventHandler("palsearp:serverSyncHalloweenFin", function()
-    local _source = source
-    local xPlayer = ESX.GetPlayerFromId(_source)
+    local xPlayers = ESX.GetPlayers()
 
     for i=1, #xPlayers, 1 do
 		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
@@ -75,7 +74,6 @@ end)
 RegisterNetEvent("palsearp:gainHalloweenPb")
 AddEventHandler("palsearp:gainHalloweenPb", function()
     local _source = source
-    local xPlayer = ESX.GetPlayerFromId(_source)
 
     local pb = math.random(zbConfig.pbParJackoMin,zbConfig.pbParJackoMax)
     givePb(pb)
